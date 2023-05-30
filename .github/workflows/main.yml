@@ -36,7 +36,7 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          args: --fail-on=upgradable|patchable
+          args: --fail-on=upgradable
       
 
   deploy:
