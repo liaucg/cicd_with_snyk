@@ -1,5 +1,5 @@
 name: CICD with Snyk
-run-name: ${{ github.actor }} is doing CICD for Serverless Application
+run-name: ${{ github.actor }} is doing CICD with Snyk
 
 on:
   push:
@@ -28,6 +28,8 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
+      - name: Run Installation of Dependencies Commands
+        run: npm install
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
         env:
